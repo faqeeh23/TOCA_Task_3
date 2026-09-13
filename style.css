@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+:root {
+    --primary: #0984e3; 
+    --secondary: #00b894; 
+    --accent: #e17055; 
+    --dark: #232525; 
+    --light: #dfe6e9; 
+
+
+    --p-1: 8px; 
+    --p-2: 16px; 
+    --p-3: 32px; 
+
+
+    --p-4: 150px; 
+
+    --m-1: 8px;
+    --m-2: 16px;
+    --m-3: 32px;
+
+    
+}
+
+/* ======= Header ============ */
+
+.header-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--p-2) var(--p-4);
+    background-color: rgba(255, 255, 255, 0.1);
+    position:sticky;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    align-items: center;
+    z-index: 5;
+}
+
+.header-section span {
+    color: var(--primary);
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--m-3);
+    list-style: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: 0.6s ease;
+    padding-bottom: 4px;
+}
+
+.navigation a:hover {
+    color: var(--light);
+    border-bottom: 1px solid;
+}
+
+
+/* ===========Key Frames ============= */
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 200px); 
+  }
+  80% {
+    transform: translate(20px, 30px);  
+  }
+  100% {
+    transform: translate(0, 0);       
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ========= Hero ========= */
+
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--p-3);
+    padding: var(--p-4);
+    overflow: hidden;
+    background: radial-gradient(circle at top, #1a1a3a, var(--dark));
+}
+
+.hero h1 {
+    color: var(--primary);
+    font-size: 40px;
+    z-index: 4;
+}
+
+.hero button {
+    padding: var(--p-2) var(--p-3);
+    background-color: var(--accent);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: 0.7s;
+}
+
+.hero button:hover {
+    background-color: var(--dark);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: 0 5px 7px var(--accent);
+}
+
+.o {
+    position: absolute;
+    top: 40px;
+    left: 60%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    filter: blur(7px);
+    animation: float 5s ease-in-out infinite;
+
+}
+
+
+/* ============= Planets section ============= */
+
+
+
+.planets {
+  padding: var(--p-3) var(--p-4);
+  
+}
+
+.planets h1 {
+  text-align: center;
+  padding-bottom: var(--p-3);
+}
+.planets h1 {
+  color: var(--secondary);
+}
+
+.planets-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column: auto;
+  gap: var(--p-3);
+  
+}
+
+.planets-cards:hover {
+    transform: translateY(-9px);
+    cursor: pointer;
+}
+.planet-card {
+  text-align: center;
+  padding: 40px var(--p-3) ;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) ;
+  transition: 0.4s ease;
+}
+
+.planet-card h2 {
+  color: var(--primary);
+  padding-top: var(--p-3);
+}
+
+.planet-card:hover {
+  border: 1px solid var(--primary) ;
+  box-shadow: 0 3px 5px var(--primary);
+
+}
+
+
+.planet {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 9s linear infinite;
+}
+
+
+.mercury {
+  background: radial-gradient(circle at 30% 30%, #b0b0b0, #6b6b6b);
+}
+.venus {
+  background: radial-gradient(circle at 30% 30%, #e8c07d, #a5762f);
+}
+.earth {
+  background: radial-gradient(circle at 30% 30%, #6ab7ff, #1e6b3a);
+}
+.mars {
+  background: radial-gradient(circle at 30% 30%, #ff8c66, #6b6b6b);
+}
+.jupiter {
+  background: radial-gradient(circle at 30% 30%, #e0b088, #9c6b3f);
+}
+.saturn {
+  background: radial-gradient(circle at 30% 30%, #f0d9a0, #b89b5e);
+}
+
+
+/* ========= Missions ============== */
+
+
+
+.missions h1 {
+  text-align: center;
+  color: var(--secondary);
+  padding-bottom: var(--p-3);
+}
+
+.missions-conternar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 120px;
+  gap: var(--p-2);
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+
+.miss {
+  
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: grid; 
+  place-items: center; 
+  padding: var(--p-2);
+  font-weight: 600;
+  color: var(--primary);
+  transition: background-color 0.3s;
+}
+
+.m1{
+  grid-column: 1/4;
+  grid-row: 1/3;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  text-align: center; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+}
+
+.miss:hover {
+  background-color: rgba(92, 157, 231, 0.25);
+}
+
+.m4 {
+  grid-column: 4/6;
+}
+
+
+/* ========== Numbers ============ */
+
+.numbers {
+  padding: var(--p-3) var(--p-4);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--p-2);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.numbers span {
+  font-weight: 300;
+  font-size: 40px;
+  color: var(--accent);
+
+}
+
+.numbers div {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--p-2) var(--p-3);
+  border-radius: 10px;
+  transition: 0.7s;
+}
+
+.numbers div:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+/* ============ Footer ============ */
+
+
+
+.footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding: var(--p-3) var(--p-4);
+  background-color: rgba(255, 255, 255, 0.187);
+}
